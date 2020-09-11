@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonenAppV2 {
     class Person {
+        private static int sAnzahlPersonen = 0;
         private const int minEintrittsjahr = 1975;
         private const double maxSalaer = 99999.95;
         protected int mPersNr { get; }
@@ -32,33 +33,27 @@ namespace PersonenAppV2 {
         }
         protected double mPensum { get; set; }
 
+        
         public Person() {
-            mPersNr = -1;
-            mAnrede = "Frau";
-            mName = "Neue Person";
-            mVorname = "";
-            mPlz = "6000";
-            mOrt = "Luzern";
-            mEintrittsjahr = DateTime.Now.Year;
-            mSalaer = 5000.00;
-            mPensum = 100;
-
+            mPersNr = sAnzahlPersonen;
+            sAnzahlPersonen++;
+           
         }
-        public Person(int PersNr) {
-            mPersNr = PersNr;
-        }
-        public Person(int PersNr, String Anrede,String Name, String Vorname) {
-            mPersNr = PersNr;
+        public Person(String Anrede,String Name, String Vorname) {
+            mPersNr = sAnzahlPersonen;
+            sAnzahlPersonen++;
             mAnrede = Anrede;
             mName = Name;
             mVorname = Vorname;
         }
-        public Person(int PersNr, String Name, String Vorname, int Eintrittsjahr) {
-            mPersNr = PersNr;
+        public Person(String Name, String Vorname, int Eintrittsjahr) {
+            mPersNr = sAnzahlPersonen;
+            sAnzahlPersonen++;
             mName = Name;
             mVorname = Vorname;
             mEintrittsjahr = Eintrittsjahr;
         }
+
     }
 
 }
