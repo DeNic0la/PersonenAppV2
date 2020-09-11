@@ -31,6 +31,19 @@ namespace PersonenAppV2 {
             }
         }
         protected double mPensum { get; set; }
+
+        public Person() {
+            mPersNr = -1;
+            mAnrede = "Frau";
+            mName = "Neue Person";
+            mVorname = "";
+            mPlz = "6000";
+            mOrt = "Luzern";
+            mEintrittsjahr = DateTime.Now.Year;
+            mSalaer = 5000.00;
+            mPensum = 100;
+
+        }
     }
 
 }
