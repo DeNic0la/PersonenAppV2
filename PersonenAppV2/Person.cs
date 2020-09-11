@@ -44,6 +44,21 @@ namespace PersonenAppV2 {
             mPensum = 100;
 
         }
+        public Person(int PersNr) {
+            mPersNr = PersNr;
+        }
+        public Person(int PersNr, String Anrede,String Name, String Vorname) {
+            mPersNr = PersNr;
+            mAnrede = Anrede;
+            mName = Name;
+            mVorname = Vorname;
+        }
+        public Person(int PersNr, String Name, String Vorname, int Eintrittsjahr) {
+            mPersNr = PersNr;
+            mName = Name;
+            mVorname = Vorname;
+            mEintrittsjahr = Eintrittsjahr;
+        }
     }
 
 }
