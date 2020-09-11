@@ -53,7 +53,11 @@ namespace PersonenAppV2 {
             mVorname = Vorname;
             mEintrittsjahr = Eintrittsjahr;
         }
-
+        public static Double CalculateLohn(double Salaer, int Pensum) {
+            return Salaer * Pensum / 100;
+        }
+        public Double CalculateLohn() {
+            return mSalaer * mPensum / 100;
+        }
     }
-
 }
