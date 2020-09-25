@@ -363,6 +363,7 @@
             this.MinimumSize = new System.Drawing.Size(367, 350);
             this.Name = "frmHaupt";
             this.Text = "Personen App v2";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClosed);
             this.Load += new System.EventHandler(this.OnFormLoad);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

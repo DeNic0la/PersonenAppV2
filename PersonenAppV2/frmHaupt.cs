@@ -42,7 +42,7 @@ namespace PersonenAppV2 {
                 try {
                     FileStream myStream = new FileStream(sPfad, FileMode.Open);
                     BinaryFormatter binFormatter = new BinaryFormatter();
-                    m_Personen = (List<Person>)binFormatter.Deserialize(myStream);
+                    mPersonen = (List<Person>)binFormatter.Deserialize(myStream);
                     myStream.Close();
                 }
                 catch (Exception ex) {

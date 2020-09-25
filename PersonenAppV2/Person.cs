@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PersonenAppV2 {
+
+    [Serializable()]
     public class Person {
         private static int sAnzahlPersonen = 0;
         private const int minEintrittsjahr = 1975;
