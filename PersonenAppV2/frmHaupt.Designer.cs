@@ -1,7 +1,5 @@
-﻿namespace PersonenAppV2
-{
-    partial class frmHaupt
-    {
+﻿namespace PersonenAppV2 {
+    partial class frmHaupt {
         /// <summary>
         /// Erforderliche Designervariable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Verwendete Ressourcen bereinigen.
         /// </summary>
         /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,7 @@
         /// Erforderliche Methode für die Designerunterstützung.
         /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -93,6 +88,7 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "-";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.OnDelete);
             // 
             // btnAdd
             // 
@@ -102,6 +98,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.OnAdd);
             // 
             // panel4
             // 
@@ -220,7 +217,7 @@
             // 
             // txtPensum
             // 
-            this.txtPensum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPensum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPensum.Location = new System.Drawing.Point(212, 146);
             this.txtPensum.Name = "txtPensum";
@@ -270,7 +267,7 @@
             // 
             // txtOrt
             // 
-            this.txtOrt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtOrt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOrt.Location = new System.Drawing.Point(168, 94);
             this.txtOrt.Name = "txtOrt";
@@ -304,7 +301,7 @@
             // 
             // txtVornamen
             // 
-            this.txtVornamen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtVornamen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVornamen.Location = new System.Drawing.Point(78, 68);
             this.txtVornamen.Name = "txtVornamen";
@@ -322,7 +319,7 @@
             // 
             // txtNamen
             // 
-            this.txtNamen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNamen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNamen.Location = new System.Drawing.Point(78, 42);
             this.txtNamen.Name = "txtNamen";
