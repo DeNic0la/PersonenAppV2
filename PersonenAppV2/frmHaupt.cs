@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using PersonenAppV2.Properties;
+
 
 namespace PersonenAppV2 {
     public partial class frmHaupt : Form {
@@ -66,7 +68,17 @@ namespace PersonenAppV2 {
                     return;
 
             }
+            string jsonString;
+            Person test = new Person();
             FileStream myStream = new FileStream(sPfad, FileMode.Create);
+            jsonString = JsonConvert.SerializeObject(test);
+            JsonSerializer ser = new JsonSerializer();//https://www.youtube.com/watch?v=Ib3jnD158NI
+
+
+
+
+
+
             BinaryFormatter binFormatter = new BinaryFormatter();
             binFormatter.Serialize(myStream, mPersonen);
             myStream.Close();
