@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+//using System.Text.Json;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PersonenAppV2.Properties;
 
 
@@ -35,17 +37,24 @@ namespace PersonenAppV2 {
                 if (DialogResult.No == MessageBox.Show("Möchten Sie die Datei im Applikationsverzeichnis lesen?", "Informationen einlesen",
                                         MessageBoxButtons.YesNo, MessageBoxIcon.Question)) {
                     OpenFileDialog ofd = new OpenFileDialog();
-                    ofd.Filter = "pd7 files (*.pd7)|*.pd7|All files (*.*)|*";
+                    ofd.Filter = "pd7 files (*.json)|*.pd7|All files (*.*)|*";
                     if (DialogResult.OK == ofd.ShowDialog())
                         sPfad = ofd.FileName;
                     else
                         return;
                 }
                 try {
+                    JsonSerializerNicola jsn = new JsonSerializerNicola();
+                    MessageBox.Show(sPfad);
+                    Object obj = jsn.JsonDesirialize(typeof(List<Person>),sPfad);
+
+                    mPersonen = (List<Person>)obj;
+
+                    /*
                     FileStream myStream = new FileStream(sPfad, FileMode.Open);
                     BinaryFormatter binFormatter = new BinaryFormatter();
                     mPersonen = (List<Person>)binFormatter.Deserialize(myStream);
-                    myStream.Close();
+                    myStream.Close();*/
                 }
                 catch (Exception ex) {
                     //Falls ein Fehler passiert, Fehlermeldung ausgeben
@@ -60,7 +69,7 @@ namespace PersonenAppV2 {
             string sPfad = Application.StartupPath + "\\MyObject.pd7";
             if (DialogResult.No == MessageBox.Show("Möchten Sie die Daten im Applikationsverzeichnis speichern?", "Speichern", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)) {
                 SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "pd7 files (*.pd7)|*.pd7|All files (*.*)|*";
+                sfd.Filter = "pd7 files (*.json)|*.json|All files (*.*)|*";
                 sfd.DefaultExt = "pd7";
                 if (DialogResult.OK == sfd.ShowDialog())
                     sPfad = sfd.FileName;
@@ -68,11 +77,14 @@ namespace PersonenAppV2 {
                     return;
 
             }
-            string jsonString;
+
+            JsonSerializerNicola js = new JsonSerializerNicola();
+            js.JsonSerialize(mPersonen, sPfad);
+           /* string jsonString;
             Person test = new Person();
             FileStream myStream = new FileStream(sPfad, FileMode.Create);
             jsonString = JsonConvert.SerializeObject(test);
-            JsonSerializer ser = new JsonSerializer();//https://www.youtube.com/watch?v=Ib3jnD158NI
+            JsonSerializer ser = new Newtonsoft.Json.JsonSerializer();//https://www.youtube.com/watch?v=Ib3jnD158NI
 
 
 
@@ -82,7 +94,7 @@ namespace PersonenAppV2 {
             BinaryFormatter binFormatter = new BinaryFormatter();
             binFormatter.Serialize(myStream, mPersonen);
             myStream.Close();
-
+           */
 
         }
 
